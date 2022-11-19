@@ -11,7 +11,7 @@ async fn login(
   usr_info: &UsrInfo,
 ) -> Result<(), Box<dyn std::error::Error>> {
   let res1 = client
-    .get("http://10.255.255.34/api/v1/ip")
+    .get("http://10.255.255.46/api/v1/ip")
     .send()
     .await?
     .json::<Res1Data>()
@@ -29,7 +29,7 @@ async fn login(
     usripadd: res1.data,
   };
   let res2 = client
-    .post("http://10.255.255.34/api/v1/login")
+    .post("http://10.255.255.46/api/v1/login")
     .json(&req2)
     .send()
     .await?
